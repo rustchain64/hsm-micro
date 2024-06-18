@@ -1,2 +1,2 @@
-com/example/servicea/controller/ServiceBController.class
-com/example/servicea/ServiceBApplication.class
+com/example/serviceb/ServiceBApplication.class
+com/example/serviceb/controller/ServiceBController.class

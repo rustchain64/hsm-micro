@@ -9,13 +9,13 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-  instance:
+instance:
     prefer-ip-address: true
 
 resilience4j:
   circuitbreaker:
     instances:
-      serviceD:
+      serviceC:
         register-health-indicator: true
         ring-buffer-size-in-closed-state: 10
         ring-buffer-size-in-half-open-state: 5

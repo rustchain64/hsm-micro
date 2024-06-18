@@ -1,22 +1,13 @@
 server:
-  port: 8082 # Change port for each service
-
-spring:
-  application:
-    name: service-b # Change name for each service
+  port: 8082
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8762/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
   instance:
     prefer-ip-address: true
 
-resilience4j:
-  circuitbreaker:
-    instances:
-      serviceB:
-        register-health-indicator: true
-        ring-buffer-size-in-closed-state: 10
-        ring-buffer-size-in-half-open-state: 5
-        wait-duration-in-open-state: 10000
+spring:
+  application:
+    name: service-b

@@ -1,51 +1,56 @@
 version: "3.8"
 services:
   eureka-server:
-    image: master-root-eureka-server
+    build: ./eureka-server
     ports:
       - "8761:8761"
     networks:
       - spring-boot-microservices
-  api-gateway:
-    image: master-root-api-gateway
-    ports:
-      - "8080:8080"
-    networks:
-      - spring-boot-microservices
-    depends_on:
-      - eureka-server
+
   service-a:
-    image: master-root-service-a
-    ports:
-      - "8081:8081"
-    networks:
-      - spring-boot-microservices
+    build: ./service-a
     depends_on:
       - eureka-server
+    networks:
+      - spring-boot-microservices
+
   service-b:
-    image: master-root-service-b
-    ports:
-      - "8082:8082"
-    networks:
-      - spring-boot-microservices
+    build: ./service-b
     depends_on:
       - eureka-server
+    networks:
+      - spring-boot-microservices
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_APPLICATION_NAME=service-b
+
   service-c:
-    image: master-root-service-c
-    ports:
-      - "8083:8083"
-    networks:
-      - spring-boot-microservices
+    build: ./service-c
     depends_on:
       - eureka-server
+    networks:
+      - spring-boot-microservices
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_APPLICATION_NAME=service-c
+
   service-d:
-    image: master-root-service-d
-    ports:
-      - "8084:8084"
-    networks:
-      - spring-boot-microservices
+    build: ./service-d
     depends_on:
       - eureka-server
+    networks:
+      - spring-boot-microservices
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_APPLICATION_NAME=service-d
+
+  api-gateway:
+    build: ./api-gateway
+    depends_on:
+      - eureka-server
+    networks:
+      - spring-boot-microservices
+
 networks:
   spring-boot-microservices:
     driver: bridge
