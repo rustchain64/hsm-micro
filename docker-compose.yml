@@ -29,6 +29,10 @@ services:
       - eureka-server
     networks:
       - spring-boot-microservices
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_APPLICATION_NAME=service-a
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
 
   service-b:
     build: ./service-b
@@ -39,6 +43,7 @@ services:
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
       - SPRING_APPLICATION_NAME=service-b
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
 
   service-c:
     build: ./service-c
@@ -49,6 +54,7 @@ services:
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
       - SPRING_APPLICATION_NAME=service-c
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
 
   service-d:
     build: ./service-d
@@ -59,6 +65,7 @@ services:
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
       - SPRING_APPLICATION_NAME=service-d
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
 
   api-gateway:
     build: ./api-gateway
