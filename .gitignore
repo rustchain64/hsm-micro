@@ -1,1 +1,7 @@
 /target/**
+eureka-server/target/**
+kafka/target/**
+saga/target/**
+service-b/target/service-b-0.0.1-SNAPSHOT.jar
+service-b/target/service-b-0.0.1-SNAPSHOT.jar.original
+sidecar/target/**
