@@ -1,0 +1,48 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: saga-service
+
+  datasource:
+    url: jdbc:mysql://mysql:3306/saga_db
+    username: saga_user
+    password: saga_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+logging:
+  level:
+    org.springframework: INFO
+    com.example.saga: DEBUG
+
+# Kafka configurations
+kafka:
+  bootstrap-servers: kafka:9092
+  consumer:
+    group-id: saga-consumer-group
+    auto-offset-reset: earliest
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+# Saga specific configurations
+saga:
+  retry:
+    max-attempts: 3
+  timeout:
+    duration: 30000  # in milliseconds

@@ -1,0 +1,22 @@
+server:
+  port: 8084 # Change port for each service
+
+spring:
+  application:
+    name: service-d # Change name for each service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      serviceD:
+        register-health-indicator: true
+        ring-buffer-size-in-closed-state: 10
+        ring-buffer-size-in-half-open-state: 5
+        wait-duration-in-open-state: 10000
