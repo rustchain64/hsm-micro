@@ -1,2 +1,6 @@
 com/example/serviced/controller/ServiceDController.class
 com/example/serviced/ServiceDApplication.class
+com/example/serviced/kafka/KafkaConsumerService.class
+com/example/serviced/kafka/KafkaConsumerConfig.class
+com/example/serviced/kafka/KafkaProducerConfig.class
+com/example/serviced/kafka/KafkaProducerService.class

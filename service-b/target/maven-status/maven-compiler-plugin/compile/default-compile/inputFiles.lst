@@ -1,2 +1,6 @@
 /Users/wesleyparr/Projects/mastercard/master-root/service-b/src/main/java/com/example/serviceb/ServiceBApplication.java
 /Users/wesleyparr/Projects/mastercard/master-root/service-b/src/main/java/com/example/serviceb/controller/ServiceBController.java
+/Users/wesleyparr/Projects/mastercard/master-root/service-b/src/main/java/com/example/serviceb/kafka/KafkaConsumerConfig.java
+/Users/wesleyparr/Projects/mastercard/master-root/service-b/src/main/java/com/example/serviceb/kafka/KafkaConsumerService.java
+/Users/wesleyparr/Projects/mastercard/master-root/service-b/src/main/java/com/example/serviceb/kafka/KafkaProducerConfig.java
+/Users/wesleyparr/Projects/mastercard/master-root/service-b/src/main/java/com/example/serviceb/kafka/KafkaProducerService.java

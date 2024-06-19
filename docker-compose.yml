@@ -25,8 +25,11 @@ services:
 
   service-a:
     build: ./service-a
+    ports:
+      - "8081:8081"
     depends_on:
       - eureka-server
+      - kafka
     networks:
       - spring-boot-microservices
     environment:
@@ -36,8 +39,11 @@ services:
 
   service-b:
     build: ./service-b
+    ports:
+      - "8082:8082"
     depends_on:
       - eureka-server
+      - kafka
     networks:
       - spring-boot-microservices
     environment:
@@ -47,8 +53,11 @@ services:
 
   service-c:
     build: ./service-c
+    ports:
+      - "8083:8083"
     depends_on:
       - eureka-server
+      - kafka
     networks:
       - spring-boot-microservices
     environment:
@@ -58,8 +67,11 @@ services:
 
   service-d:
     build: ./service-d
+    ports:
+      - "8084:8084"
     depends_on:
       - eureka-server
+      - kafka
     networks:
       - spring-boot-microservices
     environment:

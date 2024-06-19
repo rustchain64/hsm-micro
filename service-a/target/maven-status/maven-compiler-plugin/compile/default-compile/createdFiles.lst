@@ -1,2 +1,6 @@
-com/example/servicea/ServiceAApplication.class
+com/example/servicea/kafka/KafkaConsumerService.class
+com/example/servicea/kafka/KafkaConsumerConfig.class
 com/example/servicea/controller/ServiceAController.class
+com/example/servicea/kafka/KafkaProducerService.class
+com/example/servicea/ServiceAApplication.class
+com/example/servicea/kafka/KafkaProducerConfig.class

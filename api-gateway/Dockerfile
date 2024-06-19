@@ -1,5 +1,5 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:11-jre-slim
+# Use a base image with Java 17
+FROM openjdk:17-jdk-slim
 
 # Install curl
 RUN apt-get update && apt-get install -y curl
